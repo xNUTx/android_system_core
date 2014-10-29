@@ -45,7 +45,7 @@
 #include <suspend/autosuspend.h>
 #endif
 
-#include "bootable/recovery/minui/minui.h"
+//#include "minui/minui.h"
 
 #include <pthread.h>
 #include <linux/android_alarm.h>
