@@ -1083,7 +1083,7 @@ static void alarm_close_rtc_dev(int fd)
 	close(fd);
 }
 
-static int alarm_set_reboot_time(int fd, int type, time_t *secs)
+static int alarm_set_reboot_time(int fd, int type, time_t secs)
 {
 	struct timespec ts;
 	ts.tv_sec = secs;
@@ -1092,7 +1092,7 @@ static int alarm_set_reboot_time(int fd, int type, time_t *secs)
 
 	ret = ioctl(fd, ANDROID_ALARM_SET(type), &ts);
 	if (ret < 0)
-		LOGE("Unable to set reboot time to %ld\n", *secs);
+		LOGE("Unable to set reboot time to %ld\n", secs);
 	return ret;
 }
 
